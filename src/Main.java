@@ -1,19 +1,36 @@
 public class Main {
-    // Input and Output
+    // Arithmetic Operators
 
     public static void main(String[] args) {
-        // Outputting Things with println
+        // Integers, Math and Arithmetic Operators
 
-        System.out.println("Hello World!");
+        int x = 100;
+        int y = 20;
 
-        int x = 10;
-        System.out.println(x);
+        // Addition (+)
+        int result = x + y;
+        System.out.println(result);
 
-        System.out.println("Outputting a value: " + x);
+        // Subtraction (-)
+        // We're also reassigning a variable here
+        result = x - y;
+        System.out.println(result);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Type in your Username: ");
-        String input = scanner.nextLine();
-        System.out.println("Hello, " + input + "!");
+        // Multiplication (*)
+        result = x * y;
+        System.out.println(result);
+
+        // Division (/)
+        result = x / y;
+        System.out.println(result);
+
+        // Remainder (%)
+        result = 20 % 2;
+        System.out.println(result);
+
+        // Math methods
+        System.out.println("---------");
+        System.out.println(Math.max(x, y));
+        System.out.println(Math.abs(-500)); // |-500| = 500
     }
 }
