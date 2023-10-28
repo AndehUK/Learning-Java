@@ -1,15 +1,20 @@
-public class Casting {
-    // Casting (Converting data types between each other)
-    
+public class Ternary {
     public static void main(String[] args) {
+        // Ternary Operator
 
-        int loan = 750;
-        float interestRate = 0.0525f;
+        int exam = 65;
+        int gift = 0;
 
-        float implicitinterest = loan * interestRate;
-        float explicitInterest = (float) loan * interestRate;
+        // If statement version:
+        if (exam >= 50) {
+            gift = 10;
+        } else {
+            gift = 0;
+        }
+        System.out.println(gift);
 
-        int x = (int) 50.5f + (int) 20.6f; // Rounds down
-        System.out.println(x);
+        gift = (exam >= 50) ? 10 : 0;
+        System.out.println(gift);
     }
+
 }
