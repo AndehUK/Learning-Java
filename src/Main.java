@@ -1,22 +1,24 @@
 public class Main {
-    // Assignment Operators
+    // Boolean and Comparison Operators
 
     public static void main(String[] args) {
-        // Assignment Operators
 
-        int x = 100;
-        int y = 20;
+        boolean aTruthyValue = true;
+        boolean aFalsyValue = false;
 
-        // Re-assign an existing variables
-        x = x + y;
-        x += y; // This does the same as above
+        System.out.println("This is a Truthy boolean value: " + aTruthyValue);
+        System.out.println("This is a Falsy boolean value: " + aFalsyValue);
 
-        x -= y;
-        x *= y;
-        x /= y;
-        x %= y;
+        // Comparison Operators
 
-        x++; // Increments the integer value by 1
-        x--; // Decrements the integer value by 1
+        int score = 98;
+
+        boolean passed = score >= 50; // true
+        System.out.println("You passed: " + passed + " with " + score + " points!");
+
+        boolean hasPerfectScore = score == 100; // False, 98 is not equal to 100
+        System.out.println("Perfect Score? " + hasPerfectScore);
+
+        boolean failedClass = !passed; // Turns a true into false, and false into true (Inverts the boolean value)
     }
 }
