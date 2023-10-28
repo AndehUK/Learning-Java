@@ -1,24 +1,30 @@
 public class Main {
-    // Boolean and Logical Operators
+    // If and Else statements
 
     public static void main(String[] args) {
-        // Boolean and Logical Operators
+        int firstScore = 51;
+        int secondScore = 51;
 
-        boolean aTruthyValue = true;
-        boolean aFalsyValue = false;
+        if (firstScore >= 50) {
+            System.out.println("You have passed exam 1 with a score of " + firstScore + "!");
+        } else {
+            System.out.println("You have failed exam 1 with a score of " + firstScore + ".");
+        }
 
-        // Local Operators:
-        // && (AND)
-        // || (OR)
-        // ! (NOT / NEGATION)
+        if (secondScore >= 50) {
+            System.out.println("You have passed exam 2 with a score of " + secondScore + "!");
+        } else if (secondScore < 0) {
+            System.out.println("How did you get a negative score in exam 2? Points: " + secondScore);
+        } else {
+            System.out.println("You have failed exam 2 with a score of " + secondScore + ".");
+        }
 
-        boolean possible = aTruthyValue && aFalsyValue; // False, this will only be true if both values are truthy;
-        System.out.println(possible);
-        boolean maybePossible = aTruthyValue || aFalsyValue; // True, this will be true if at least 1 value is truthy;
-        System.out.println(maybePossible);
-        boolean invertedTruthy = !aTruthyValue; // False
-        System.out.println(invertedTruthy);
-        boolean invertedFalsy = !aFalsyValue; // True
-        System.out.println(invertedFalsy);
+        if (firstScore >= 50 && secondScore >= 50) {
+            System.out.println("Congrats! You have passed both exams.");
+        } else if (firstScore >= 50 || secondScore >= 50) {
+            System.out.println("Good Job! You passed 1 of the 2 exams.");
+        } else {
+            System.out.println("Unfortunately you didn't pass any of the exams. Better luck next time!");
+        }
     }
 }
