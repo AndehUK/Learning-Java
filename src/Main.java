@@ -1,24 +1,24 @@
 public class Main {
-    // Boolean and Comparison Operators
+    // Boolean and Logical Operators
 
     public static void main(String[] args) {
+        // Boolean and Logical Operators
 
         boolean aTruthyValue = true;
         boolean aFalsyValue = false;
 
-        System.out.println("This is a Truthy boolean value: " + aTruthyValue);
-        System.out.println("This is a Falsy boolean value: " + aFalsyValue);
+        // Local Operators:
+        // && (AND)
+        // || (OR)
+        // ! (NOT / NEGATION)
 
-        // Comparison Operators
-
-        int score = 98;
-
-        boolean passed = score >= 50; // true
-        System.out.println("You passed: " + passed + " with " + score + " points!");
-
-        boolean hasPerfectScore = score == 100; // False, 98 is not equal to 100
-        System.out.println("Perfect Score? " + hasPerfectScore);
-
-        boolean failedClass = !passed; // Turns a true into false, and false into true (Inverts the boolean value)
+        boolean possible = aTruthyValue && aFalsyValue; // False, this will only be true if both values are truthy;
+        System.out.println(possible);
+        boolean maybePossible = aTruthyValue || aFalsyValue; // True, this will be true if at least 1 value is truthy;
+        System.out.println(maybePossible);
+        boolean invertedTruthy = !aTruthyValue; // False
+        System.out.println(invertedTruthy);
+        boolean invertedFalsy = !aFalsyValue; // True
+        System.out.println(invertedFalsy);
     }
 }
