@@ -1,6 +1,8 @@
-public class Arrays {
+import java.util.Scanner;
+
+public class Loops {
     public static void main(String[] args) {
-        String[] questions = new String[3]; // Created a new array of strings with a maximum length of 3
+        String[] questions = new String[3];
         questions[0] = "How many States does the USA have?";
         questions[1] = "What is the capital of the United Kingdom?";
         questions[2] = "What is the chemical symbol for Iron?";
@@ -10,16 +12,32 @@ public class Arrays {
         answers[1] = "London";
         answers[2] = "Fe";
 
-        System.out.println(questions[0]);
-        System.out.println(answers[0]);
+        // int = i (Variable declaration)
+        // i < 5 (The condition for the for loop to keep running)
+        // i++ (What to do after every iteration)
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
 
-        // Override value at index:
-        questions[0] = "This is an example question!";
-        answers[0] = "This is an example answer!";
-        System.out.println(questions[0]);
-        System.out.println(answers[0]);
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+        }
 
-        // ArrayIndexOutOfBoundsException (Uncomment Line Below)
-        // System.out.println(questions[3]);
+        // forEach
+        for (String question : questions) {
+            System.out.println(question);
+        }
+
+        // While Loop, ends when break is called
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Do you want to continue?");
+            if (scanner.next().equalsIgnoreCase("yes")) {
+                continue;
+            } else {
+                break;
+            }
+        }
     }
 }
