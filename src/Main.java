@@ -1,10 +1,10 @@
-import java.util.Scanner;
-
-public class Loops {
+public class Methods {
     public static void main(String[] args) {
+        // Methods
+
         String[] questions = new String[3];
         questions[0] = "How many States does the USA have?";
-        questions[1] = "What is the capital of the United Kingdom?";
+        questions[1] = "What is the Capital of the United Kingdom?";
         questions[2] = "What is the chemical symbol for Iron?";
 
         String[] answers = new String[3];
@@ -12,32 +12,24 @@ public class Loops {
         answers[1] = "London";
         answers[2] = "Fe";
 
-        // int = i (Variable declaration)
-        // i < 5 (The condition for the for loop to keep running)
-        // i++ (What to do after every iteration)
-        for (int i = 0; i < 5; i++) {
-            System.out.println(i);
-        }
+        outputQuestionsAndAnswersXTimes(1, questions, answers);
+        System.out.println(sum(10, 12));
+    }
 
+    public static void outputQuestionsAndAnswersXTimes(int loopTotal, String[] questions, String[] answers) {
+        for (int y = 0; y < loopTotal; y++) {
+            outputQuestionsAndAnswers(questions, answers);
+        }
+    }
+
+    public static void outputQuestionsAndAnswers(String[] questions, String[] answers) {
         for (int i = 0; i < questions.length; i++) {
             System.out.println(questions[i]);
+            System.out.println(answers[i]);
         }
+    }
 
-        // forEach
-        for (String question : questions) {
-            System.out.println(question);
-        }
-
-        // While Loop, ends when break is called
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.println("Do you want to continue?");
-            if (scanner.next().equalsIgnoreCase("yes")) {
-                continue;
-            } else {
-                break;
-            }
-        }
+    public static int sum(int x, int y) {
+        return x + y;
     }
 }
