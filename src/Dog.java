@@ -1,4 +1,4 @@
-public class Dog extends Animal {
+public class Dog extends Animal implements IPettable {
     public static int dogToHumanYearMultiplier = 7;
 
     // Custom Constructor
@@ -7,7 +7,7 @@ public class Dog extends Animal {
     }
 
     public static void outputDog(Dog dog) {
-        System.out.println("A " + dog.age + " year old Dog called " + dog.name + "!");
+        System.out.printf("A %s year old Dog called %s!%n", dog.age, dog.name);
     }
 
     public int getAgeInHumanYears() {
@@ -16,6 +16,11 @@ public class Dog extends Animal {
 
     @Override
     public void makeSound() {
-        System.out.println(this.name + " just barked!");
+        System.out.printf("%s just barked!", this.name);
+    }
+
+    @Override
+    public void pet() {
+        System.out.printf("Petted %s!", this.name);
     }
 }
