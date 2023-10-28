@@ -1,104 +1,71 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class TriviaGame2 {
-    // Trivia Game Exercise
-
-    // Re-create the Trivia Game from before.
-
-    /*
-     *
-     * Define (at least) five questions with five answers.
-     * use arrays to save the Qs and As
-     * Create at least 2 methods that make the code more readable and easier to follow
-     * BONUS: use an endless while loop with if statements so the user can play until they no longer want to.
-     *
-     */
+public class Collections {
+    // ArrayList, Maps and Sets (Collections)
 
     public static void main(String[] args) {
-        String[] questions = new String[5];
-        String[] answers = new String[5];
-
+        String[] questions = new String[2];
         questions[0] = "How many States does the USA have?";
         questions[1] = "What is the Capital of the United Kingdom?";
-        questions[2] = "What is the chemical symbol for Iron?";
-        questions[3] = "How high is Mount Everest? (Answer in km)";
-        questions[4] = "What is the Answer to Life, the Universe and Everything?";
 
-        answers[0] = "50";
-        answers[1] = "London";
-        answers[2] = "Fe";
-        answers[3] = "8848";
-        answers[4] = "42";
+        List<String> questionsList = new ArrayList<String>(); // No need to define the length
+        questionsList.add("What language is spoken in Germany?");
+        questionsList.add("How many States does the USA have?");
+        questionsList.add("What is the Capital of the United Kingdom?");
 
-        Scanner scanner = new Scanner(System.in);
-        int score = 0;
+        // Lists -> You can add entries dynamically
 
-        while (true) {
-            displayTitle();
+        // questionsList.remove("What language is spoken in Germany"); -> Remove by value
+        // questionsList.remove(0); -> Remove by index
 
-            for (int i = 0; i < questions.length; i++) {
-                displayQuestion(i + 1, questions[i]);
-                String userAnswer = scanner.next();
+        System.out.println(questionsList.size());
+        System.out.println(questionsList.get(0)); // -> Cannot use [index], you must use .get(index) for lists
 
-                if (isCorrectAnswer(userAnswer, answers[i])) {
-                    displaySuccess(userAnswer);
-                    score = addToScore(score, 1);
-                    displayScore(score);
-                } else {
-                    displayFailed(userAnswer, answers[i]);
-                }
-            }
+        // You cannot define ArrayLists using primitive data types
+        // However there are wrapper classes available to use instead
+        // int -> Integer
 
-            displayEndScore(score);
-            displayPlayAgain();
-            if (scanner.next().equalsIgnoreCase("y")) {
-                score = 0;
-            } else {
-                break;
-            }
-        }
+        List<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(42);
+        numbers.add(1234);
 
-        goodbye();
-    }
 
-    public static void displayTitle() {
-        System.out.println("TRIVIA GAME");
-        System.out.println("-----------");
-    }
+        // Maps map a Key to a specific value called key-value pairs
+        // All keys must be unique
+        Map<String, String> countryToCapital = new HashMap<String, String>();
+        countryToCapital.put("Germany", "Berlin");
+        countryToCapital.put("France", "Paris");
+        countryToCapital.put("Italy", "Rome");
+        countryToCapital.put("USA", "Washington DC");
 
-    public static int addToScore(int score, int points) {
-        return score + points;
-    }
+        System.out.println(countryToCapital.get("Germany"));
+        System.out.println("Contains Key: Germany? " + countryToCapital.containsKey("Germany"));
+        System.out.println("Contains Key: London? " + countryToCapital.containsValue("London"));
+        countryToCapital.remove("France");
+        System.out.println("Has France been removed? " + !countryToCapital.containsKey("France"));
 
-    public static void displayScore(int score) {
-        System.out.println("You currently have " + score + " points!");
-    }
+        // Sets, a collection that contains no duplicate values
+        // Returns a boolean value when adding, true means value was added, false means the value already exists
+        Set<String> usernames = new HashSet<String>();
+        usernames.add("Andeh");
+        usernames.add("ExHiraku");
+        usernames.add("Hiraku");
+        boolean addedFirst = usernames.add("AndehUK");
+        boolean addedSecond = usernames.add("Andeh");
+        System.out.println("Successfully added AndehUK? " + addedFirst);
+        System.out.println("Successfully added Andeh? " + addedSecond);
 
-    public static void displayPlayAgain() {
-        System.out.println("Would you like to play again? (y/n)");
-    }
 
-    public static void displayEndScore(int score) {
-        System.out.println("You finished the game with " + score + " points!");
-    }
+        // Possible Errors
+        // Uncomment statements below to see Errors
 
-    public static void goodbye() {
-        System.out.println("Thanks for playing the TRIVIA GAME!");
-    }
+        // IndexOutOfBoundException
+        // If you try and pass an Index that does not exist for a list
+        //System.out.println(questionsList.get(10));
 
-    public static void displayQuestion(int questionNum, String question) {
-        System.out.println("Question " + questionNum + ": " + question);
-    }
-
-    public static boolean isCorrectAnswer(String userAnswer, String correctAnswer) {
-        return userAnswer.equalsIgnoreCase(correctAnswer);
-    }
-
-    public static void displaySuccess(String userAnswer) {
-        System.out.println("'" + userAnswer + "' was the correct answer, good job!");
-    }
-
-    public static void displayFailed(String userAnswer, String correctAnswer) {
-        System.out.println("'" + userAnswer + "' was NOT the correct answer, the correct answer was: '" + correctAnswer + "'!");
+        // Not an Exception, but returns a "null" value
+        // If you pass a Key into a Map that does not exist
+        // The return value is going to be null which could cause some problems down the line
+        System.out.println(countryToCapital.get("Test"));
     }
 }
