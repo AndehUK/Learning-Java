@@ -1,36 +1,22 @@
 public class Main {
-    // Arithmetic Operators
+    // Assignment Operators
 
     public static void main(String[] args) {
-        // Integers, Math and Arithmetic Operators
+        // Assignment Operators
 
         int x = 100;
         int y = 20;
 
-        // Addition (+)
-        int result = x + y;
-        System.out.println(result);
+        // Re-assign an existing variables
+        x = x + y;
+        x += y; // This does the same as above
 
-        // Subtraction (-)
-        // We're also reassigning a variable here
-        result = x - y;
-        System.out.println(result);
+        x -= y;
+        x *= y;
+        x /= y;
+        x %= y;
 
-        // Multiplication (*)
-        result = x * y;
-        System.out.println(result);
-
-        // Division (/)
-        result = x / y;
-        System.out.println(result);
-
-        // Remainder (%)
-        result = 20 % 2;
-        System.out.println(result);
-
-        // Math methods
-        System.out.println("---------");
-        System.out.println(Math.max(x, y));
-        System.out.println(Math.abs(-500)); // |-500| = 500
+        x++; // Increments the integer value by 1
+        x--; // Decrements the integer value by 1
     }
 }
