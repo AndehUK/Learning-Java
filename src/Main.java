@@ -1,29 +1,33 @@
-public class Main {
-    // Access Modifiers
+import java.util.ArrayList;
+import java.util.List;
 
-    // public: Can be used anywhere
-    // protected: Can be used in the same package
-    // private: Completely private to the class it is defined in
-    // static: Does not require an object to access
-    // final: Essentially a constant variable
+public class Main {
+    // Inheritance and Polymorphism
 
     public static void main(String[] args) {
-        // Using the "Default Constructor"
-        Dog doggo = new Dog();
+        Dog teddy = new Dog("Teddy", 4);
+        Dog jake = new Dog("Jake", 5);
 
-        // Using our "Custom Constructor"
-        Dog teddy = new Dog("teddy.png", "Teddy", 4);
-        Dog jake = new Dog("jake.png", "Jake", 5);
+        Cat itchy = new Cat("Itchy", 10);
+        Cat scratchy = new Cat("Scratchy", 10);
 
-        teddy.bark();
-        jake.bark();
+        itchy.makeSound();
+        teddy.makeSound();
+        jake.makeSound();
+        scratchy.makeSound();
 
-        System.out.println(teddy.getAge());
-        System.out.println(jake.getAge());
-        System.out.println(teddy.getAgeInHumanYears());
-        System.out.println(jake.getAgeInHumanYears());
 
-        Dog.outputDog(jake);
-        Dog.outputDog(teddy);
+        // Polymorphism
+        List<Animal> pets = new ArrayList<Animal>();
+        pets.add(teddy);
+        pets.add(jake);
+        pets.add(itchy);
+        pets.add(scratchy);
+
+        pets.get(1).makeSound();
+
+        Animal pet = new Dog("Tilly", 12);
+        pet.makeSound();
+        // Will use the Dog class' overridden version despite being typed as an Animal
     }
 }
