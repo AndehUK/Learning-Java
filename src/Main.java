@@ -1,4 +1,4 @@
-public class Ternary {
+public class Main {
     public static void main(String[] args) {
         // Ternary Operator
 
