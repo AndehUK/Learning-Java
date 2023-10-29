@@ -1,6 +1,6 @@
-public class Casting {
+public class Main {
     // Casting (Converting data types between each other)
-    
+
     public static void main(String[] args) {
 
         int loan = 750;
