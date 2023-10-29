@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Loops {
+public class Main {
     public static void main(String[] args) {
         String[] questions = new String[3];
         questions[0] = "How many States does the USA have?";
