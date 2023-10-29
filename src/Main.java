@@ -1,30 +1,28 @@
-import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.util.function.Supplier;
 
 public class Main {
-    // Exceptions and Try-Catch
+    // Lambda Expressions and the Supplier Class
+    // Lambdas are functional interfaces
+    // Lambdas allow you to save the execution for when you call .get() on the lambda expression
+
+    // Supplier<Type> typeSupplier = (type[] args) -> method()
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int z = scanner.nextInt();
+        LocalDateTime dateTime = LocalDateTime.now();
+        Supplier<LocalDateTime> dateSupplier = () -> LocalDateTime.now();
 
+        System.out.println(dateTime);
+        System.out.println(dateSupplier.get());
+
+        System.out.println("Waiting for 3 seconds!");
         try {
-            // This section runs normally, the catch block is triggered if this code throws an exception
-            checkForZero(z);
-            System.out.println("Valid number!");
-        } catch (Exception e) {
-            // This is called if a piece of code fails in the try block
-            System.out.printf("Caught Exception: %s\n", e.getMessage());
-        } finally {
-            // Finally is called whether the try-catch fails or not
-            System.out.println("Finished!");
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
-        System.out.println("End of program");
-    }
-
-    private static void checkForZero(int number) throws TestException {
-        if (number == 0) {
-            throw new TestException("Number is 0!");
-        }
+        System.out.println(dateTime);
+        System.out.println(dateSupplier.get());
     }
 }
