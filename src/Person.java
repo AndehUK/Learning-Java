@@ -1,5 +1,3 @@
-package banking;
-
 public class Person {
     private final String firstName;
     private final String middleName;
