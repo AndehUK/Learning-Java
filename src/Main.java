@@ -1,4 +1,4 @@
-public class Arrays {
+public class Main {
     public static void main(String[] args) {
         String[] questions = new String[3]; // Created a new array of strings with a maximum length of 3
         questions[0] = "How many States does the USA have?";
