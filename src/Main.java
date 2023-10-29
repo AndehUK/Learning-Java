@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TriviaGame2 {
+public class Main {
     // Trivia Game Exercise
 
     // Re-create the Trivia Game from before.
