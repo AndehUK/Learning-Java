@@ -1,4 +1,4 @@
-public class OOP {
+public class Main {
     /*
      * Everything is an Object.
      * We can create Custom Objects with custom Functionality, these are called Classes
