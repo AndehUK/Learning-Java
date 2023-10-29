@@ -1,4 +1,4 @@
-public class StringMethods {
+public class Main {
     // Strings and String Methods
 
     public static void main(String[] args) {
