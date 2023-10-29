@@ -1,17 +1,12 @@
 public class Main {
-    // Anonymous Classes
-
-    // Anonymous Classes are usually used for Abstract Classes.
-    // They essentially allow you to subclass a given class without actually subclassing it.
+    // Enums and Advanced Enums
 
     public static void main(String[] args) {
-        Person andrew = new Person("Andrew", "Mason", 20);
+        Difficulty gameDifficulty = Difficulty.MEDIUM;
+        gameDifficulty = Difficulty.HARD;
 
-        Person manager = new Person("John", "Doe", 42) {
-            @Override
-            public String getFullName() {
-                return "Manager %s".formatted(super.getFullName());
-            }
-        };
+        ToolTier tier = ToolTier.DIAMOND;
+        System.out.println(tier.getAttackMultiplier());
+        System.out.println(tier.getAttackSpeed());
     }
 }
