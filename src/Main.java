@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Collections {
+public class Main {
     // ArrayList, Maps and Sets (Collections)
 
     public static void main(String[] args) {
